@@ -2,26 +2,28 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-st.title("📊 University Course Analytics – Full Report (Queries a–k)")
+st.title("University Course Analytics Dashboard")
 
-uploaded_file = st.file_uploader("Upload merged CSV file", type="csv")
+uploaded_file = st.file_uploader("Upload your CSV file", type="csv")
 
 if uploaded_file:
+    # Load CSV
     data = pd.read_csv(uploaded_file)
 
-    # Ensure date column is correctly parsed
-    data['visit_date'] = pd.to_datetime(data['visit_date'])
+    # Rename truncated column
+    data = data.rename(columns={
+        "visits_on_that_d": "visits_on_that_day"
+    })
 
-    st.success("CSV Loaded Successfully!")
-    st.dataframe(data.head())
+    st.subheader("Data Preview")
+    st.write(data.head())
 
-    # ---------------------------
-    # a. Total visits per course
-    # ---------------------------
-    st.header("a. Total number of times each course was visited")
-    q_a = data.groupby(["courseCode", "title"])["visits_on_that_day"].sum().reset_index()
+    # ------------------ A. Total Visits Per Course ------------------
+    st.header("A. Total Visits per Course")
 
-    fig, ax = plt.subplots(figsize=(10, 5))
+    q_a = data.groupby(["courseCode", "CourseTitle"])["visits_on_that_day"].sum().reset_index()
+
+    fig, ax = plt.subplots(figsize=(10,5))
     ax.bar(q_a["courseCode"], q_a["visits_on_that_day"])
     ax.set_title("Total Visits per Course")
     ax.set_xlabel("Course Code")
@@ -29,115 +31,97 @@ if uploaded_file:
     plt.xticks(rotation=45)
     st.pyplot(fig)
 
-    # ---------------------------
-    # b. Total visits per program per course
-    # ---------------------------
-    st.header("b. Total visits per course by program")
-    q_b = data.groupby(["Program", "courseCode", "title"])["visits_on_that_day"].sum().reset_index()
-    st.dataframe(q_b)
+    st.write(q_a)
 
-    # ---------------------------
-    # c. Total number of users enrolled per program
-    # ---------------------------
-    st.header("c. Total number of students in each program")
+    # ------------------ B. Total Visits per Course by Program ------------------
+    st.header("B. Total Visits per Course by Program")
+
+    q_b = data.groupby(["Program", "courseCode", "CourseTitle"])["visits_on_that_day"].sum().reset_index()
+
+    st.write(q_b)
+
+    # ------------------ C. Total Users per Program ------------------
+    st.header("C. Total Number of Students per Program")
+
     q_c = data.groupby("Program")["userName"].nunique().reset_index(name="total_users")
 
-    fig, ax = plt.subplots(figsize=(7, 5))
+    fig, ax = plt.subplots(figsize=(7,5))
     ax.bar(q_c["Program"], q_c["total_users"])
-    ax.set_title("Total Users per Program")
+    ax.set_title("Students per Program")
+    ax.set_xlabel("Program")
+    ax.set_ylabel("Total Users")
+    plt.xticks(rotation=45)
     st.pyplot(fig)
 
-    # ---------------------------
-    # d. Unique visitors per department by program
-    # ---------------------------
-    st.header("d. Unique visitors per department by program")
-    q_d = data.groupby(["deptName", "Program"])["userName"].nunique().reset_index(name="unique_visitors")
-    st.dataframe(q_d)
+    st.write(q_c)
 
-    # ---------------------------
-    # e. Most recent visit date per user per course
-    # ---------------------------
-    st.header("e. Most recent visit date per user per course")
-    q_e = data.groupby(["userName", "courseCode"])["visit_date"].max().reset_index()
-    q_e = q_e.sort_values("visit_date", ascending=False)
-    st.dataframe(q_e)
+    # ------------------ D. Unique Visitors per Department by Program ------------------
+    st.header("D. Unique Visitors per Department by Program")
 
-    # ---------------------------
-    # f. Number of times each user visited each course
-    # ---------------------------
-    st.header("f. Visit count per user per course")
+    q_d = data.groupby(["Department", "Program"])["userName"].nunique().reset_index(name="unique_visitors")
+    st.write(q_d)
+
+    # ------------------ E. Most Recent Visit per User per Course ------------------
+    st.header("E. Most Recent Visit Date per User per Course")
+
+    data["visit_date"] = pd.to_datetime(data["visit_date"])
+
+    q_e = data.groupby(["userName", "courseCode"])["visit_date"].max().reset_index(name="last_visit_date")
+    st.write(q_e)
+
+    # ------------------ F. Number of Visits per User per Course ------------------
+    st.header("F. Number of Times Each User Visited Each Course")
+
     q_f = data.groupby(["userName", "courseCode"])["visits_on_that_day"].sum().reset_index(name="visit_count")
-    st.dataframe(q_f)
+    st.write(q_f)
 
-    # ---------------------------
-    # g. User who visited each course the most
-    # ---------------------------
-    st.header("g. Top user for each course")
-    q_g = q_f.sort_values(["courseCode", "visit_count"], ascending=[True, False]).groupby("courseCode").head(1)
-    st.dataframe(q_g)
+    # ------------------ G. User Who Visited Each Course the Most ------------------
+    st.header("G. Top Visitor Per Course")
 
-    # ---------------------------
-    # h. User with highest visits in a single day per course
-    # ---------------------------
-    st.header("h. User with most visits in a single day (per course)")
+    q_g = q_f.sort_values(["courseCode", "visit_count"], ascending=[True, False])
+    top_g = q_g.groupby("courseCode").head(1)
+    st.write(top_g)
+
+    # ------------------ H. User with Most Visits in a Single Day ------------------
+    st.header("H. Highest Daily Visits Per Course")
+
     q_h = data.groupby(["courseCode", "userName", "visit_date"])["visits_on_that_day"].sum().reset_index(name="daily_visits")
-    q_h = q_h.sort_values(["courseCode", "daily_visits"], ascending=[True, False]).groupby("courseCode").head(1)
-    st.dataframe(q_h)
 
-    # ---------------------------
-    # i. Longest visit streak per user per course
-    # ---------------------------
-    st.header("i. Longest consecutive-day streak per user per course")
+    top_h = q_h.sort_values(["courseCode", "daily_visits"], ascending=[True, False]).groupby("courseCode").head(1)
+    st.write(top_h)
 
-    streak_results = []
-    for (user, course), group in data.groupby(["userName", "courseCode"]):
-        days = sorted(group["visit_date"].unique())
-        streak = longest = 1
+    # ------------------ I. Longest Consecutive Visit Streak ------------------
+    st.header("I. Longest Visit Streak per User per Course")
 
-        for i in range(1, len(days)):
-            if (days[i] - days[i-1]).days == 1:
-                streak += 1
-                longest = max(longest, streak)
-            else:
-                streak = 1
-        streak_results.append([user, course, longest])
+    data_sorted = data.sort_values(["userName", "courseCode", "visit_date"])
+    data_sorted["day_diff"] = data_sorted.groupby(["userName", "courseCode"])["visit_date"].diff().dt.days
+    data_sorted["streak_group"] = data_sorted["day_diff"].ne(1).cumsum()
 
-    q_i = pd.DataFrame(streak_results, columns=["userName", "courseCode", "streak_length"])\
-            .sort_values("streak_length", ascending=False)
+    streaks = data_sorted.groupby(["userName", "courseCode", "streak_group"]).size().reset_index(name="streak_length")
+    top_streaks = streaks.sort_values("streak_length", ascending=False).groupby(["userName", "courseCode"]).head(1)
 
-    st.dataframe(q_i)
+    st.write(top_streaks)
 
-    # ---------------------------
-    # j. Longest gap between visits per user per course
-    # ---------------------------
-    st.header("j. Longest gap between visits per user per course")
+    # ------------------ J. Longest Gap Between Visits ------------------
+    st.header("J. Longest Gap Between Visits per User per Course")
 
-    gap_results = []
-    for (user, course), group in data.groupby(["userName", "courseCode"]):
-        dates = sorted(group["visit_date"].unique())
-        gaps = [(dates[i] - dates[i-1]).days for i in range(1, len(dates))]
-        longest_gap = max(gaps) if gaps else 0
-        gap_results.append([user, course, longest_gap])
+    data_sorted["prev_date"] = data_sorted.groupby(["userName", "courseCode"])["visit_date"].shift()
+    data_sorted["gap_days"] = (data_sorted["visit_date"] - data_sorted["prev_date"]).dt.days
 
-    q_j = pd.DataFrame(gap_results, columns=["userName", "courseCode", "longest_gap_days"])\
-            .sort_values("longest_gap_days", ascending=False)
+    q_j = data_sorted.groupby(["userName", "courseCode"])["gap_days"].max().reset_index(name="longest_gap_days")
+    st.write(q_j)
 
-    st.dataframe(q_j)
+    # ------------------ K. Most Unique Courses Visited Within 3 Days ------------------
+    st.header("K. Users Visiting Most Unique Courses Within 3 Days")
 
-    # ---------------------------
-    # k. User visiting most unique courses in 3 days
-    # ---------------------------
-    st.header("k. User who visited the most courses within 3 days")
+    q_k = data.groupby("userName").agg(
+        unique_courses=("courseCode", "nunique"),
+        start_date=("visit_date", "min"),
+        end_date=("visit_date", "max")
+    ).reset_index()
 
-    short_window_results = []
-    for user, group in data.groupby("userName"):
-        min_date, max_date = group["visit_date"].min(), group["visit_date"].max()
-        if (max_date - min_date).days <= 3:
-            unique_courses = group["courseCode"].nunique()
-            short_window_results.append([user, unique_courses, min_date, max_date])
+    q_k["duration_days"] = (q_k["end_date"] - q_k["start_date"]).dt.days
 
-    q_k = pd.DataFrame(short_window_results,
-                       columns=["userName", "unique_courses", "start_date", "end_date"])\
-                       .sort_values("unique_courses", ascending=False)
+    top_k = q_k[q_k["duration_days"] <= 3].sort_values("unique_courses", ascending=False)
 
-    st.dataframe(q_k)
+    st.write(top_k)
