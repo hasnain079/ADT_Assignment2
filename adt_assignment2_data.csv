@@ -1,0 +1,183 @@
+Program,Department,courseCode,CourseTitle,userName,visit_date,visits_on_that_day
+Undergrad,Computer Science,CS101,Intro to Programming,alice_u,2025-10-01,1
+Undergrad,Computer Science,CS101,Intro to Programming,alice_u,2025-10-02,1
+Undergrad,Computer Science,CS101,Intro to Programming,alice_u,2025-10-03,1
+Undergrad,Computer Science,CS101,Intro to Programming,dave_m,2025-10-01,1
+Undergrad,Computer Science,CS101,Intro to Programming,dave_m,2025-10-02,1
+Undergrad,Computer Science,CS101,Intro to Programming,dave_m,2025-10-03,1
+Undergrad,Computer Science,CS101,Intro to Programming,bob_u,2025-10-07,1
+Undergrad,Computer Science,CS101,Intro to Programming,carol_u,2025-10-13,1
+Undergrad,Computer Science,CS101,Intro to Programming,diana_u,2025-10-08,1
+Undergrad,Computer Science,CS101,Intro to Programming,edward_u,2025-10-05,1
+Undergrad,Computer Science,CS101,Intro to Programming,eve_m,2025-10-13,1
+Undergrad,Computer Science,CS101,Intro to Programming,frank_m,2025-10-10,1
+Undergrad,Computer Science,CS101,Intro to Programming,grace_m,2025-10-11,1
+Undergrad,Computer Science,CS101,Intro to Programming,helen_m,2025-10-10,1
+Undergrad,Computer Science,CS101,Intro to Programming,ian_p,2025-10-13,1
+Undergrad,Computer Science,CS101,Intro to Programming,judy_p,2025-10-08,1
+Undergrad,Computer Science,CS101,Intro to Programming,kyle_p,2025-10-13,1
+Undergrad,Computer Science,CS101,Intro to Programming,lisa_d,2025-10-13,1
+Undergrad,Computer Science,CS101,Intro to Programming,mike_d,2025-10-13,1
+Undergrad,Computer Science,CS101,Intro to Programming,nina_d,2025-10-09,1
+Undergrad,Computer Science,CS101,Intro to Programming,dave_m,2025-10-02,2
+Undergrad,Computer Science,CS101,Intro to Programming,eve_m,2025-10-13,2
+Undergrad,Computer Science,CS101,Intro to Programming,frank_m,2025-10-10,2
+Undergrad,Computer Science,CS102,Data Structures,alice_u,2025-10-01,1
+Undergrad,Computer Science,CS102,Data Structures,alice_u,2025-10-02,1
+Undergrad,Computer Science,CS102,Data Structures,alice_u,2025-10-03,1
+Undergrad,Computer Science,CS102,Data Structures,dave_m,2025-10-01,1
+Undergrad,Computer Science,CS102,Data Structures,dave_m,2025-10-02,1
+Undergrad,Computer Science,CS102,Data Structures,dave_m,2025-10-03,1
+Undergrad,Computer Science,CS102,Data Structures,bob_u,2025-10-05,1
+Undergrad,Computer Science,CS102,Data Structures,carol_u,2025-10-11,1
+Undergrad,Computer Science,CS102,Data Structures,diana_u,2025-10-06,1
+Undergrad,Computer Science,CS102,Data Structures,edward_u,2025-10-11,1
+Undergrad,Computer Science,CS102,Data Structures,eve_m,2025-10-09,1
+Undergrad,Computer Science,CS102,Data Structures,frank_m,2025-10-06,1
+Undergrad,Computer Science,CS102,Data Structures,grace_m,2025-10-10,1
+Undergrad,Computer Science,CS102,Data Structures,helen_m,2025-10-14,1
+Undergrad,Computer Science,CS102,Data Structures,ian_p,2025-10-08,1
+Undergrad,Computer Science,CS102,Data Structures,judy_p,2025-10-09,1
+Undergrad,Computer Science,CS102,Data Structures,kyle_p,2025-10-05,1
+Undergrad,Computer Science,CS102,Data Structures,lisa_d,2025-10-10,1
+Undergrad,Computer Science,CS102,Data Structures,mike_d,2025-10-07,1
+Undergrad,Computer Science,CS102,Data Structures,nina_d,2025-10-13,1
+Undergrad,Computer Science,CS102,Data Structures,mike_d,2025-10-07,2
+Undergrad,Computer Science,CS102,Data Structures,dave_m,2025-10-01,2
+Undergrad,Computer Science,CS102,Data Structures,edward_u,2025-10-11,2
+Masters,Computer Science,CS501,Advanced Databases,alice_u,2025-10-01,1
+Masters,Computer Science,CS501,Advanced Databases,alice_u,2025-10-02,1
+Masters,Computer Science,CS501,Advanced Databases,alice_u,2025-10-03,1
+Masters,Computer Science,CS501,Advanced Databases,dave_m,2025-10-01,1
+Masters,Computer Science,CS501,Advanced Databases,dave_m,2025-10-02,1
+Masters,Computer Science,CS501,Advanced Databases,dave_m,2025-10-03,1
+Masters,Computer Science,CS501,Advanced Databases,dave_m,2025-10-03,2
+Masters,Computer Science,CS502,Distributed Systems,alice_u,2025-10-01,1
+Masters,Computer Science,CS502,Distributed Systems,alice_u,2025-10-02,1
+Masters,Computer Science,CS502,Distributed Systems,alice_u,2025-10-03,1
+Masters,Computer Science,CS502,Distributed Systems,dave_m,2025-10-01,1
+Masters,Computer Science,CS502,Distributed Systems,dave_m,2025-10-02,1
+Masters,Computer Science,CS502,Distributed Systems,dave_m,2025-10-03,1
+Masters,Computer Science,CS502,Distributed Systems,alice_u,2025-10-01,2
+PhD,Computer Science,CS701,Research Methodology,alice_u,2025-10-01,1
+PhD,Computer Science,CS701,Research Methodology,alice_u,2025-10-02,1
+PhD,Computer Science,CS701,Research Methodology,alice_u,2025-10-03,1
+PhD,Computer Science,CS701,Research Methodology,dave_m,2025-10-01,1
+PhD,Computer Science,CS701,Research Methodology,dave_m,2025-10-02,1
+PhD,Computer Science,CS701,Research Methodology,dave_m,2025-10-03,1
+PhD,Computer Science,CS701,Research Methodology,dave_m,2025-10-03,2
+PhD,Computer Science,CS702,Machine Learning Theory,alice_u,2025-10-01,1
+PhD,Computer Science,CS702,Machine Learning Theory,alice_u,2025-10-02,1
+PhD,Computer Science,CS702,Machine Learning Theory,alice_u,2025-10-03,1
+PhD,Computer Science,CS702,Machine Learning Theory,dave_m,2025-10-01,1
+PhD,Computer Science,CS702,Machine Learning Theory,dave_m,2025-10-02,1
+PhD,Computer Science,CS702,Machine Learning Theory,dave_m,2025-10-03,1
+PhD,Computer Science,CS702,Machine Learning Theory,alice_u,2025-10-02,2
+PhD,Computer Science,CS702,Machine Learning Theory,dave_m,2025-10-02,2
+Diploma,Computer Science,CS201,Web Development Basics,alice_u,2025-10-01,1
+Diploma,Computer Science,CS201,Web Development Basics,alice_u,2025-10-02,1
+Diploma,Computer Science,CS201,Web Development Basics,alice_u,2025-10-03,1
+Diploma,Computer Science,CS201,Web Development Basics,dave_m,2025-10-01,1
+Diploma,Computer Science,CS201,Web Development Basics,dave_m,2025-10-02,1
+Diploma,Computer Science,CS201,Web Development Basics,dave_m,2025-10-03,1
+Diploma,Computer Science,CS201,Web Development Basics,dave_m,2025-10-03,2
+Diploma,Computer Science,CS202,Intro to Databases,alice_u,2025-10-01,1
+Diploma,Computer Science,CS202,Intro to Databases,alice_u,2025-10-02,1
+Diploma,Computer Science,CS202,Intro to Databases,alice_u,2025-10-03,1
+Diploma,Computer Science,CS202,Intro to Databases,dave_m,2025-10-01,1
+Diploma,Computer Science,CS202,Intro to Databases,dave_m,2025-10-02,1
+Diploma,Computer Science,CS202,Intro to Databases,dave_m,2025-10-03,1
+Diploma,Computer Science,CS202,Intro to Databases,alice_u,2025-10-03,2
+Diploma,Computer Science,CS202,Intro to Databases,alice_u,2025-10-01,2
+Diploma,Computer Science,CS202,Intro to Databases,dave_m,2025-10-03,2
+Undergrad,Mathematics,MATH101,Calculus I,alice_u,2025-10-01,1
+Undergrad,Mathematics,MATH101,Calculus I,alice_u,2025-10-02,1
+Undergrad,Mathematics,MATH101,Calculus I,alice_u,2025-10-03,1
+Undergrad,Mathematics,MATH101,Calculus I,dave_m,2025-10-01,1
+Undergrad,Mathematics,MATH101,Calculus I,dave_m,2025-10-02,1
+Undergrad,Mathematics,MATH101,Calculus I,dave_m,2025-10-03,1
+Undergrad,Mathematics,MATH101,Calculus I,dave_m,2025-10-01,2
+Undergrad,Mathematics,MATH101,Calculus I,alice_u,2025-10-03,2
+Undergrad,Mathematics,MATH102,Linear Algebra,alice_u,2025-10-01,1
+Undergrad,Mathematics,MATH102,Linear Algebra,alice_u,2025-10-02,1
+Undergrad,Mathematics,MATH102,Linear Algebra,alice_u,2025-10-03,1
+Undergrad,Mathematics,MATH102,Linear Algebra,dave_m,2025-10-01,1
+Undergrad,Mathematics,MATH102,Linear Algebra,dave_m,2025-10-02,1
+Undergrad,Mathematics,MATH102,Linear Algebra,dave_m,2025-10-03,1
+Undergrad,Mathematics,MATH102,Linear Algebra,dave_m,2025-10-03,2
+Undergrad,Mathematics,MATH102,Linear Algebra,dave_m,2025-10-01,2
+Masters,Mathematics,MATH501,Advanced Algebra,alice_u,2025-10-01,1
+Masters,Mathematics,MATH501,Advanced Algebra,alice_u,2025-10-02,1
+Masters,Mathematics,MATH501,Advanced Algebra,alice_u,2025-10-03,1
+Masters,Mathematics,MATH501,Advanced Algebra,dave_m,2025-10-01,1
+Masters,Mathematics,MATH501,Advanced Algebra,dave_m,2025-10-02,1
+Masters,Mathematics,MATH501,Advanced Algebra,dave_m,2025-10-03,1
+Masters,Mathematics,MATH501,Advanced Algebra,bob_u,2025-10-12,1
+Masters,Mathematics,MATH501,Advanced Algebra,carol_u,2025-10-12,1
+Masters,Mathematics,MATH501,Advanced Algebra,diana_u,2025-10-14,1
+Masters,Mathematics,MATH501,Advanced Algebra,edward_u,2025-10-05,1
+Masters,Mathematics,MATH501,Advanced Algebra,eve_m,2025-10-06,1
+Masters,Mathematics,MATH501,Advanced Algebra,frank_m,2025-10-12,1
+Masters,Mathematics,MATH501,Advanced Algebra,grace_m,2025-10-14,1
+Masters,Mathematics,MATH501,Advanced Algebra,helen_m,2025-10-11,1
+Masters,Mathematics,MATH501,Advanced Algebra,ian_p,2025-10-08,1
+Masters,Mathematics,MATH501,Advanced Algebra,judy_p,2025-10-07,1
+Masters,Mathematics,MATH501,Advanced Algebra,kyle_p,2025-10-10,1
+Masters,Mathematics,MATH501,Advanced Algebra,lisa_d,2025-10-05,1
+Masters,Mathematics,MATH501,Advanced Algebra,mike_d,2025-10-12,1
+Masters,Mathematics,MATH501,Advanced Algebra,nina_d,2025-10-05,1
+Masters,Mathematics,MATH501,Advanced Algebra,diana_u,2025-10-14,2
+Masters,Mathematics,MATH501,Advanced Algebra,alice_u,2025-10-02,2
+Masters,Mathematics,MATH501,Advanced Algebra,ian_p,2025-10-08,2
+Masters,Mathematics,MATH501,Advanced Algebra,edward_u,2025-10-05,2
+Masters,Mathematics,MATH502,Numerical Methods,alice_u,2025-10-01,1
+Masters,Mathematics,MATH502,Numerical Methods,alice_u,2025-10-02,1
+Masters,Mathematics,MATH502,Numerical Methods,alice_u,2025-10-03,1
+Masters,Mathematics,MATH502,Numerical Methods,dave_m,2025-10-01,1
+Masters,Mathematics,MATH502,Numerical Methods,dave_m,2025-10-02,1
+Masters,Mathematics,MATH502,Numerical Methods,dave_m,2025-10-03,1
+Masters,Mathematics,MATH502,Numerical Methods,bob_u,2025-10-09,1
+Masters,Mathematics,MATH502,Numerical Methods,carol_u,2025-10-07,1
+Masters,Mathematics,MATH502,Numerical Methods,diana_u,2025-10-11,1
+Masters,Mathematics,MATH502,Numerical Methods,edward_u,2025-10-14,1
+Masters,Mathematics,MATH502,Numerical Methods,eve_m,2025-10-09,1
+Masters,Mathematics,MATH502,Numerical Methods,frank_m,2025-10-05,1
+Masters,Mathematics,MATH502,Numerical Methods,grace_m,2025-10-14,1
+Masters,Mathematics,MATH502,Numerical Methods,helen_m,2025-10-10,1
+Masters,Mathematics,MATH502,Numerical Methods,ian_p,2025-10-06,1
+Masters,Mathematics,MATH502,Numerical Methods,judy_p,2025-10-07,1
+Masters,Mathematics,MATH502,Numerical Methods,kyle_p,2025-10-05,1
+Masters,Mathematics,MATH502,Numerical Methods,lisa_d,2025-10-06,1
+Masters,Mathematics,MATH502,Numerical Methods,mike_d,2025-10-09,1
+Masters,Mathematics,MATH502,Numerical Methods,nina_d,2025-10-05,1
+Masters,Mathematics,MATH502,Numerical Methods,diana_u,2025-10-11,2
+PhD,Mathematics,MATH701,Advanced Topology,alice_u,2025-10-01,1
+PhD,Mathematics,MATH701,Advanced Topology,alice_u,2025-10-02,1
+PhD,Mathematics,MATH701,Advanced Topology,alice_u,2025-10-03,1
+PhD,Mathematics,MATH701,Advanced Topology,dave_m,2025-10-01,1
+PhD,Mathematics,MATH701,Advanced Topology,dave_m,2025-10-02,1
+PhD,Mathematics,MATH701,Advanced Topology,dave_m,2025-10-03,1
+PhD,Mathematics,MATH701,Advanced Topology,dave_m,2025-10-01,2
+PhD,Mathematics,MATH701,Advanced Topology,alice_u,2025-10-01,2
+PhD,Mathematics,MATH702,Applied Probability,alice_u,2025-10-01,1
+PhD,Mathematics,MATH702,Applied Probability,alice_u,2025-10-02,1
+PhD,Mathematics,MATH702,Applied Probability,alice_u,2025-10-03,1
+PhD,Mathematics,MATH702,Applied Probability,dave_m,2025-10-01,1
+PhD,Mathematics,MATH702,Applied Probability,dave_m,2025-10-02,1
+PhD,Mathematics,MATH702,Applied Probability,dave_m,2025-10-03,1
+PhD,Mathematics,MATH702,Applied Probability,alice_u,2025-10-02,2
+PhD,Mathematics,MATH702,Applied Probability,alice_u,2025-10-03,2
+PhD,Mathematics,MATH702,Applied Probability,dave_m,2025-10-02,2
+Diploma,Mathematics,MATH201,Intro to Statistics,alice_u,2025-10-01,1
+Diploma,Mathematics,MATH201,Intro to Statistics,alice_u,2025-10-02,1
+Diploma,Mathematics,MATH201,Intro to Statistics,alice_u,2025-10-03,1
+Diploma,Mathematics,MATH201,Intro to Statistics,dave_m,2025-10-01,1
+Diploma,Mathematics,MATH201,Intro to Statistics,dave_m,2025-10-02,1
+Diploma,Mathematics,MATH201,Intro to Statistics,dave_m,2025-10-03,1
+Diploma,Mathematics,MATH202,Quantitative Methods,alice_u,2025-10-01,1
+Diploma,Mathematics,MATH202,Quantitative Methods,alice_u,2025-10-02,1
+Diploma,Mathematics,MATH202,Quantitative Methods,alice_u,2025-10-03,1
+Diploma,Mathematics,MATH202,Quantitative Methods,dave_m,2025-10-01,1
+Diploma,Mathematics,MATH202,Quantitative Methods,dave_m,2025-10-02,1
+Diploma,Mathematics,MATH202,Quantitative Methods,dave_m,2025-10-03,1
+Diploma,Mathematics,MATH202,Quantitative Methods,alice_u,2025-10-02,2
